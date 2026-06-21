@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nixon Rathinam — AI & Data Science Student and Full Stack Developer. Building intelligent, real-world digital products." />
+  <meta name="keywords" content="Nixon Rathinam, AI, Data Science, Full Stack Developer, Portfolio, React, Python, Java" />
+  <meta name="author" content="Nixon Rathinam" />
+  <meta property="og:title" content="Nixon Rathinam | AI & Full Stack Developer Portfolio" />
+  <meta property="og:description" content="Portfolio of Nixon Rathinam — AI & DS Student, Full Stack Developer, and problem solver." />
+  <meta property="og:type" content="website" />
+  <title>Nixon Rathinam | AI & Full Stack Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Ambient Background -->
+  <div class="ambient-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ======================== NAVIGATION ======================== -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo" aria-label="Nixon Rathinam Portfolio Home">
+      <div class="nav-logo-badge" aria-hidden="true">NR</div>
+      <span class="nav-logo-text">Portfolio</span>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" class="active" id="nav-home">Home</a></li>
+      <li><a href="#about" id="nav-about">About</a></li>
+      <li><a href="#skills" id="nav-skills">Skills</a></li>
+      <li><a href="#projects" id="nav-projects">Projects</a></li>
+      <li><a href="#education" id="nav-education">Education</a></li>
+      <li><a href="#contact" class="nav-cta" id="nav-contact">Contact</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ======================== HERO SECTION ======================== -->
+  <section id="hero" aria-labelledby="hero-heading">
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Left: Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="dot" aria-hidden="true"></span>
+            Available for Opportunities
+          </div>
+
+          <h1 class="hero-name" id="hero-heading">
+            Nixon<br /><span>Rathinam</span>
+          </h1>
+
+          <p class="hero-title">
+            <span id="typing-text"></span><span class="typing-cursor" aria-hidden="true"></span>
+          </p>
+
+          <p class="hero-desc">
+            A passionate AI & Data Science student building intelligent, real‑world digital products. 
+            I blend clean code with creative problem-solving to craft impactful applications.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#resume" class="btn btn-primary" id="download-resume-btn" aria-label="Download Resume">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Resume
+            </a>
+            <a href="#contact" class="btn btn-secondary" id="hero-contact-btn" aria-label="Contact Nixon">
+              Let's Talk
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <div class="hero-stats" role="list" aria-label="Key statistics">
+            <div class="stat-item" role="listitem">
+              <div class="stat-value">3+</div>
+              <div class="stat-label">Projects Built</div>
+            </div>
+            <div class="stat-item" role="listitem">
+              <div class="stat-value">10+</div>
+              <div class="stat-label">Tech Skills</div>
+            </div>
+            <div class="stat-item" role="listitem">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Dedication</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Visual Card -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card">
+            <div class="card-avatar-wrapper">
+              <div class="card-avatar">NR</div>
+              <div class="card-avatar-ring"></div>
+              <div class="available-badge" title="Available for work"></div>
+            </div>
+
+            <div class="card-name">Nixon Rathinam</div>
+            <div class="card-role">AI & Data Science Student</div>
+
+            <div class="code-block">
+              <span class="code-line"><span class="code-bracket">const</span> developer = {</span>
+              <span class="code-line code-indent"><span class="code-key">name</span>: <span class="code-str">"Nixon Rathinam"</span>,</span>
+              <span class="code-line code-indent"><span class="code-key">role</span>: <span class="code-str">"AI & DS Student"</span>,</span>
+              <span class="code-line code-indent"><span class="code-key">stack</span>: <span class="code-str">"Full Stack Dev"</span>,</span>
+              <span class="code-line code-indent"><span class="code-key">passion</span>: <span class="code-str">"Building"</span></span>
+              <span class="code-line"><span class="code-bracket">}</span></span>
+            </div>
+
+            <div class="skill-chips" role="list" aria-label="Key skills">
+              <span class="skill-chip chip-purple" role="listitem">Python</span>
+              <span class="skill-chip chip-blue" role="listitem">React</span>
+              <span class="skill-chip chip-cyan" role="listitem">SQL</span>
+              <span class="skill-chip chip-green" role="listitem">Power BI</span>
+              <span class="skill-chip chip-pink" role="listitem">Java</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== ABOUT SECTION ======================== -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Image / Info Card -->
+        <div class="about-image-wrapper reveal">
+          <div class="about-image-card">
+            <div class="about-avatar" aria-hidden="true">NR</div>
+            <div class="about-info-items">
+              <div class="about-info-item">
+                <span class="info-icon" aria-hidden="true">🎓</span>
+                <span>B.Tech AI & DS — CARE College</span>
+              </div>
+              <div class="about-info-item">
+                <span class="info-icon" aria-hidden="true">📍</span>
+                <span>Tamil Nadu, India</span>
+              </div>
+              <div class="about-info-item">
+                <span class="info-icon" aria-hidden="true">💼</span>
+                <span>Open to Internships &amp; Projects</span>
+              </div>
+              <div class="about-info-item">
+                <span class="info-icon" aria-hidden="true">🌐</span>
+                <span>English, Tamil</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="about-content">
+          <div class="section-label">Who I Am</div>
+          <h2 class="section-title" id="about-heading">
+            Passionate <span>Full Stack</span><br/>Developer & AI Enthusiast
+          </h2>
+
+          <p class="about-text">
+            Hi! I'm <strong>Nixon Rathinam</strong>, a dedicated B.Tech Artificial Intelligence and Data Science 
+            student at <strong>CARE College of Engineering</strong>. I'm passionate about AI, Data Analytics, 
+            Full Stack Development, and building real-world products that make a meaningful impact.
+          </p>
+
+          <p class="about-text">
+            I thrive at the intersection of intelligence and engineering — whether that's designing 
+            data pipelines, training ML models, or shipping full-stack web applications. I believe 
+            in writing clean, maintainable code and crafting experiences that users love.
+          </p>
+
+          <div class="about-highlights" role="list" aria-label="Key focus areas">
+            <div class="highlight-card reveal reveal-delay-1" role="listitem">
+              <div class="highlight-icon" aria-hidden="true">🤖</div>
+              <div class="highlight-title">Artificial Intelligence</div>
+              <div class="highlight-desc">Building intelligent systems and ML-powered solutions</div>
+            </div>
+            <div class="highlight-card reveal reveal-delay-2" role="listitem">
+              <div class="highlight-icon" aria-hidden="true">📊</div>
+              <div class="highlight-title">Data Analytics</div>
+              <div class="highlight-desc">Transforming raw data into meaningful insights</div>
+            </div>
+            <div class="highlight-card reveal reveal-delay-3" role="listitem">
+              <div class="highlight-icon" aria-hidden="true">⚡</div>
+              <div class="highlight-title">Full Stack Dev</div>
+              <div class="highlight-desc">End-to-end web applications from UI to backend</div>
+            </div>
+            <div class="highlight-card reveal reveal-delay-4" role="listitem">
+              <div class="highlight-icon" aria-hidden="true">🚀</div>
+              <div class="highlight-title">Product Building</div>
+              <div class="highlight-desc">Turning ideas into shipped, real-world products</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SKILLS SECTION ======================== -->
+  <section id="skills" aria-labelledby="skills-heading">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom: 3rem;">
+        <div class="section-label">My Expertise</div>
+        <h2 class="section-title" id="skills-heading">Skills &amp; <span>Technologies</span></h2>
+        <p class="section-subtitle">A curated stack of technologies I use to build powerful applications.</p>
+      </div>
+
+      <div class="skills-wrapper" role="list" aria-label="Technical skills">
+
+        <div class="skill-card reveal" role="listitem" tabindex="0">
+          <span class="skill-icon" aria-hidden="true">☕</span>
+          <div class="skill-name">Java</div>
+          <div class="skill-level">Intermediate</div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="70"></div></div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-1" role="listitem" tabindex="0">
+          <span class="skill-icon" aria-hidden="true">🐍</span>
+          <div class="skill-name">Python</div>
+          <div class="skill-level">Advanced</div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-2" role="listitem" tabindex="0">
+          <span class="skill-icon" aria-hidden="true">🗄️</span>
+          <div class="skill-name">SQL</div>
+          <div class="skill-level">Intermediate</div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="72"></div></div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-3" role="listitem" tabindex="0">
+          <span class="skill-icon" aria-hidden="true">📊</span>
+          <div class="skill-name">Power BI</div>
+          <div class="skill-level">Intermediate</div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="68"></div></div>
+        </div>
+
+        <div class="skill-card reveal" role="listitem" tabindex="0">
+          <span class="skill-icon" aria-hidden="true">🌐</span>
+          <div class="skill-name">HTML</div>
+          <div class="skill-level">Advanced</div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-1" role="listitem" tabindex="0">
+          <span class="skill-icon" aria-hidden="true">🎨</span>
+          <div class="skill-name">CSS</div>
+          <div class="skill-level">Advanced</div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="88"></div></div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-2" role="listitem" tabindex="0">
+          <span class="skill-icon" aria-hidden="true">⚡</span>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-level">Advanced</div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="82"></div></div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-3" role="listitem" tabindex="0">
+          <span class="skill-icon" aria-hidden="true">⚛️</span>
+          <div class="skill-name">React</div>
+          <div class="skill-level">Intermediate</div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="75"></div></div>
+        </div>
+
+        <div class="skill-card reveal" role="listitem" tabindex="0">
+          <span class="skill-icon" aria-hidden="true">🔧</span>
+          <div class="skill-name">Git</div>
+          <div class="skill-level">Advanced</div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-1" role="listitem" tabindex="0">
+          <span class="skill-icon" aria-hidden="true">🐙</span>
+          <div class="skill-name">GitHub</div>
+          <div class="skill-level">Advanced</div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PROJECTS SECTION ======================== -->
+  <section id="projects" aria-labelledby="projects-heading">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom: 3rem;">
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title" id="projects-heading">My <span>Projects</span></h2>
+        <p class="section-subtitle">A collection of real-world applications I've built — from AI to full-stack web.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card project-purple reveal" aria-labelledby="project-1-title">
+          <div class="project-header">
+            <div class="project-icon icon-purple" aria-hidden="true">🤖</div>
+            <span class="project-status status-completed">Completed</span>
+          </div>
+          <h3 class="project-title" id="project-1-title">AI Virtual Try-On Platform</h3>
+          <p class="project-desc">
+            An AI-powered virtual clothing try-on platform that uses computer vision and 
+            generative models to let users visualize outfits in real-time without physically 
+            trying them on. Features image segmentation, pose estimation, and garment overlay.
+          </p>
+          <div class="project-tags" aria-label="Technologies used">
+            <span class="tag">Python</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">React</span>
+            <span class="tag">Flask</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link link-github" aria-label="View AI Virtual Try-On Platform on GitHub">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="#" class="project-link link-demo" aria-label="View AI Virtual Try-On Platform live demo">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Live Demo
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card project-blue reveal reveal-delay-1" aria-labelledby="project-2-title">
+          <div class="project-header">
+            <div class="project-icon icon-blue" aria-hidden="true">📊</div>
+            <span class="project-status status-completed">Completed</span>
+          </div>
+          <h3 class="project-title" id="project-2-title">Data Analytics Dashboard</h3>
+          <p class="project-desc">
+            A comprehensive data analytics and visualization dashboard built with Power BI 
+            and Python. Provides real-time insights through interactive charts, KPI tracking, 
+            trend analysis, and automated reporting for business intelligence workflows.
+          </p>
+          <div class="project-tags" aria-label="Technologies used">
+            <span class="tag">Python</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Matplotlib</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link link-github" aria-label="View Data Analytics Dashboard on GitHub">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="#" class="project-link link-demo" aria-label="View Data Analytics Dashboard live demo">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Live Demo
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card project-green reveal reveal-delay-2" aria-labelledby="project-3-title">
+          <div class="project-header">
+            <div class="project-icon icon-green" aria-hidden="true">🌐</div>
+            <span class="project-status status-live">Live</span>
+          </div>
+          <h3 class="project-title" id="project-3-title">Personal Portfolio Website</h3>
+          <p class="project-desc">
+            A modern, fully responsive personal portfolio website with premium glassmorphism 
+            design, smooth scroll animations, dark theme, interactive sections, and SEO 
+            optimization. Built entirely with Vanilla HTML, CSS, and JavaScript.
+          </p>
+          <div class="project-tags" aria-label="Technologies used">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Glassmorphism</span>
+            <span class="tag">SEO</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link link-github" aria-label="View Portfolio Website on GitHub">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="#" class="project-link link-demo" aria-label="View Portfolio Website live">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Live Demo
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== EDUCATION SECTION ======================== -->
+  <section id="education" aria-labelledby="education-heading">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom: 3rem;">
+        <div class="section-label">Academic Background</div>
+        <h2 class="section-title" id="education-heading"><span>Education</span> Journey</h2>
+      </div>
+
+      <div class="education-timeline">
+
+        <div class="edu-item" role="article" aria-labelledby="edu-1-title">
+          <div class="edu-card">
+            <div class="edu-year">2022 — Present</div>
+            <h3 class="edu-degree" id="edu-1-title">B.Tech — Artificial Intelligence &amp; Data Science</h3>
+            <div class="edu-school">🏛️ CARE College of Engineering, Tamil Nadu</div>
+            <p class="edu-desc">
+              Pursuing a specialized degree in AI &amp; DS with coursework in Machine Learning, 
+              Deep Learning, Data Structures, Algorithms, Computer Vision, Natural Language Processing, 
+              Database Systems, and Full Stack Web Development. Active participant in technical events 
+              and coding competitions.
+            </p>
+          </div>
+        </div>
+
+        <div class="edu-item" role="article" aria-labelledby="edu-2-title">
+          <div class="edu-card">
+            <div class="edu-year">2020 — 2022</div>
+            <h3 class="edu-degree" id="edu-2-title">Higher Secondary Education (12th Grade)</h3>
+            <div class="edu-school">🏫 Computer Science Stream</div>
+            <p class="edu-desc">
+              Completed higher secondary education with a focus on Computer Science, Mathematics, and Physics. 
+              Developed a strong foundation in programming and problem-solving that sparked a passion for technology.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CERTIFICATIONS SECTION ======================== -->
+  <section id="certifications" aria-labelledby="certifications-heading">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom: 3rem;">
+        <div class="section-label">Credentials</div>
+        <h2 class="section-title" id="certifications-heading">Certifications &amp; <span>Achievements</span></h2>
+        <p class="section-subtitle">Continuously upskilling through industry-recognized courses and certifications.</p>
+      </div>
+
+      <div class="certs-grid">
+
+        <div class="cert-card reveal" role="article" aria-labelledby="cert-1-title">
+          <div class="cert-badge" aria-hidden="true">🐍</div>
+          <div>
+            <h3 class="cert-title" id="cert-1-title">Python for Data Science</h3>
+            <div class="cert-issuer">IBM / Coursera</div>
+            <div class="cert-date">2024</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-1" role="article" aria-labelledby="cert-2-title">
+          <div class="cert-badge" aria-hidden="true">🤖</div>
+          <div>
+            <h3 class="cert-title" id="cert-2-title">Machine Learning Foundations</h3>
+            <div class="cert-issuer">Google / Coursera</div>
+            <div class="cert-date">2024</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-2" role="article" aria-labelledby="cert-3-title">
+          <div class="cert-badge" aria-hidden="true">⚛️</div>
+          <div>
+            <h3 class="cert-title" id="cert-3-title">React — The Complete Guide</h3>
+            <div class="cert-issuer">Udemy</div>
+            <div class="cert-date">2024</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-3" role="article" aria-labelledby="cert-4-title">
+          <div class="cert-badge" aria-hidden="true">📊</div>
+          <div>
+            <h3 class="cert-title" id="cert-4-title">Data Visualization with Power BI</h3>
+            <div class="cert-issuer">Microsoft Learn</div>
+            <div class="cert-date">2023</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal" role="article" aria-labelledby="cert-5-title">
+          <div class="cert-badge" aria-hidden="true">☁️</div>
+          <div>
+            <h3 class="cert-title" id="cert-5-title">Cloud Computing Fundamentals</h3>
+            <div class="cert-issuer">AWS / Coursera</div>
+            <div class="cert-date">2023</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-1" role="article" aria-labelledby="cert-6-title">
+          <div class="cert-badge" aria-hidden="true">🗄️</div>
+          <div>
+            <h3 class="cert-title" id="cert-6-title">SQL for Data Analysis</h3>
+            <div class="cert-issuer">HackerRank</div>
+            <div class="cert-date">2023</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CONTACT SECTION ======================== -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom: 3rem; text-align: center;">
+        <div class="section-label" style="justify-content: center;">Get In Touch</div>
+        <h2 class="section-title" id="contact-heading">Let's <span>Connect</span></h2>
+        <p class="section-subtitle" style="margin: 0 auto 0;">
+          Whether you have a project idea, an opportunity, or just want to say hello — I'd love to hear from you.
+        </p>
+      </div>
+
+      <div class="contact-wrapper">
+
+        <!-- Contact Channels -->
+        <div class="contact-info reveal">
+          <h3>Reach out directly</h3>
+          <p>I'm currently open to internship opportunities, freelance projects, and collaborations. Reach out and I'll get back to you as soon as possible.</p>
+
+          <div class="contact-channels" role="list" aria-label="Contact channels">
+            <a href="mailto:nixonrathinam@gmail.com" class="contact-channel" id="contact-email" role="listitem" aria-label="Send email to Nixon Rathinam">
+              <div class="channel-icon ch-email" aria-hidden="true">✉️</div>
+              <div>
+                <div class="channel-label">Email</div>
+                <div class="channel-value">nixonrathinam37@gmail.com</div>
+              </div>
+            </a>
+
+            <a href="tel:+91XXXXXXXXXX" class="contact-channel" id="contact-phone" role="listitem" aria-label="Call Nixon Rathinam">
+              <div class="channel-icon ch-phone" aria-hidden="true">📱</div>
+              <div>
+                <div class="channel-label">Phone</div>
+                <div class="channel-value">+91 XXXXX XXXXX</div>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/nixonrathinam" target="_blank" rel="noopener noreferrer" class="contact-channel" id="contact-linkedin" role="listitem" aria-label="Connect with Nixon Rathinam on LinkedIn">
+              <div class="channel-icon ch-linkedin" aria-hidden="true">💼</div>
+              <div>
+                <div class="channel-label">LinkedIn</div>
+                <div class="channel-value">linkedin.com/in/nixonrathinam</div>
+              </div>
+            </a>
+
+            <a href="https://github.com/nixonrathinam" target="_blank" rel="noopener noreferrer" class="contact-channel" id="contact-github" role="listitem" aria-label="View Nixon Rathinam's GitHub profile">
+              <div class="channel-icon ch-github" aria-hidden="true">🐙</div>
+              <div>
+                <div class="channel-label">GitHub</div>
+                <div class="channel-value">github.com/nixonrathinam</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper reveal reveal-delay-2">
+          <h3>Send a Message</h3>
+          <form id="contact-form" aria-label="Contact form" novalidate>
+            <div class="form-group">
+              <label for="contact-name">Your Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="John Doe" required autocomplete="name" aria-required="true" />
+            </div>
+            <div class="form-group">
+              <label for="contact-email-input">Email Address</label>
+              <input type="email" id="contact-email-input" name="email" placeholder="john@example.com" required autocomplete="email" aria-required="true" />
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" name="subject" placeholder="Internship Opportunity / Project Idea" />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="Tell me about your project or opportunity..." required aria-required="true"></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="form-submit-btn">
+              <span id="submit-text">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:6px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Send Message
+              </span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-text">
+          Crafted with ❤️ by <span>Nixon Rathinam</span> · © <span id="footer-year"></span>
+        </p>
+        <div class="footer-links" role="list" aria-label="Footer navigation">
+          <a href="#hero" role="listitem">Home</a>
+          <a href="#about" role="listitem">About</a>
+          <a href="#projects" role="listitem">Projects</a>
+          <a href="#contact" role="listitem">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="alert" aria-live="polite" aria-atomic="true">
+    <span id="toast-icon" aria-hidden="true"></span>
+    <span id="toast-message"></span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

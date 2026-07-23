@@ -210,9 +210,7 @@ function initSkillBars() {
 function initContactForm() {
   const form = $('#contact-form');
   if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+form.addEventListener('submit', async (e) => {
 
     const name = $('#contact-name').value.trim();
     const email = $('#contact-email-input').value.trim();
@@ -240,33 +238,39 @@ function initContactForm() {
 
     // Simulate sending
     submitBtn.disabled = true;
-    submitText.innerHTML = `
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:6px;animation:spin-icon 1s linear infinite">
-        <path d="M21 12a9 9 0 11-6.219-8.56"/>
-      </svg>
-      Sending...
-    `;
+submitText.textContent = "Sending...";
 
-    setTimeout(() => {
-      submitBtn.disabled = false;
-      submitText.innerHTML = `
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:6px">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Message Sent!
-      `;
-      form.reset();
-      showToast('success', '✅', 'Message sent successfully! I\'ll get back to you soon.');
+const formData = new FormData(form);
 
-      setTimeout(() => {
-        submitText.innerHTML = `
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:6px">
-            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
-          </svg>
-          Send Message
-        `;
-      }, 3000);
-    }, 1500);
+try {
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData
+  });
+
+  const result = await response.json();
+
+  if (result.success) {
+    form.reset();
+    showToast("success", "✅", "Message sent successfully!");
+  } else {
+    showToast("error", "❌", result.message);
+  }
+
+} catch (error) {
+  console.error(error);
+  showToast("error", "❌", "Failed to send message.");
+}
+
+submitBtn.disabled = false;
+submitText.innerHTML = `
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+stroke="currentColor" stroke-width="2.5">
+<line x1="22" y1="2" x2="11" y2="13"/>
+<polygon points="22 2 15 22 11 13 2 9 22 2"/>
+</svg>
+Send Message
+`;
   });
 }
 

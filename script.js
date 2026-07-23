@@ -211,6 +211,7 @@ function initContactForm() {
   const form = $('#contact-form');
   if (!form) return;
 form.addEventListener('submit', async (e) => {
+     e.preventDefault();
 
     const name = $('#contact-name').value.trim();
     const email = $('#contact-email-input').value.trim();

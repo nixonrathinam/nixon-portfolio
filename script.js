@@ -211,15 +211,49 @@ function initContactForm() {
   const form = $('#contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = $('#contact-name').value.trim();
-    const email = $('#contact-email-input').value.trim();
-    const message = $('#contact-message').value.trim();
     const submitBtn = $('#form-submit-btn');
     const submitText = $('#submit-text');
 
+    submitBtn.disabled = true;
+    submitText.textContent = "Sending...";
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        showToast("✅ Message sent successfully!", "success");
+        form.reset();
+      } else {
+        showToast("❌ Failed to send message.", "error");
+      }
+
+    } catch (error) {
+      console.error(error);
+      showToast("❌ Network error.", "error");
+    }
+
+    submitBtn.disabled = false;
+    submitText.innerHTML = `
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <line x1="22" y1="2" x2="11" y2="13"/>
+      <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+      Send Message
+    `;
+  });
+}
     // Validate
     if (!name) {
       showToast('error', '⚠️', 'Please enter your name.');

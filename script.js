@@ -367,3 +367,35 @@ document.addEventListener('mousemove', (e) => {
   `;
   document.head.appendChild(style);
 })();
+// ============================================
+// 13. PRELOADER — Name typing + Progress bar
+// ============================================
+window.addEventListener('load', function () {
+  const preloader = document.getElementById('preloader');
+  const progressBar = document.getElementById('progressBar');
+  const percentage = document.getElementById('percentage');
+
+  if (!preloader || !progressBar || !percentage) return;
+
+  let progress = 0;
+
+  // ~1 second loading
+  const interval = setInterval(() => {
+    progress += Math.floor(Math.random() * 10) + 6;
+
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(interval);
+
+      setTimeout(() => {
+        preloader.classList.add('hidden');
+        setTimeout(() => {
+          if (preloader.parentNode) preloader.remove();
+        }, 500);
+      }, 200);
+    }
+
+    progressBar.style.width = progress + '%';
+    percentage.textContent = progress + '%';
+  }, 55);
+});

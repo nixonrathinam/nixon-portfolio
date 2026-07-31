@@ -379,23 +379,29 @@ window.addEventListener('load', function () {
 
   let progress = 0;
 
-  // ~1 second loading
+  // Smooth loading (~3 seconds)
   const interval = setInterval(() => {
-    progress += Math.floor(Math.random() * 10) + 6;
+    progress++;
 
     if (progress >= 100) {
       progress = 100;
       clearInterval(interval);
 
+      progressBar.style.width = progress + '%';
+      percentage.textContent = progress + '%';
+
       setTimeout(() => {
         preloader.classList.add('hidden');
-        setTimeout(() => {
-          if (preloader.parentNode) preloader.remove();
-        }, 500);
-      }, 200);
-    }
 
-    progressBar.style.width = progress + '%';
-    percentage.textContent = progress + '%';
-  }, 55);
+        setTimeout(() => {
+          if (preloader.parentNode) {
+            preloader.remove();
+          }
+        }, 500);
+      }, 300);
+    } else {
+      progressBar.style.width = progress + '%';
+      percentage.textContent = progress + '%';
+    }
+  }, 20); // 100 × 30ms = ~3 seconds
 });

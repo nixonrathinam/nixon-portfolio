@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initToast();
   setFooterYear();
   initSmoothScroll();
+  initProfileCard();
 });
 
 // ============================================
@@ -405,3 +406,86 @@ window.addEventListener('load', function () {
     }
   }, 20); // 100 × 30ms = ~3 seconds
 });
+
+// ============================================
+// 11. PROFILE CARD — Pointer tilt interaction
+// ============================================
+function initProfileCard() {
+  const wrapper = $('#profile-card');
+  if (!wrapper) return;
+
+  const shell = wrapper.querySelector('.pc-card-shell');
+  if (!shell) return;
+
+  let rafId = null;
+  let currentX = 0;
+  let currentY = 0;
+  let targetX = 0;
+  let targetY = 0;
+  let active = false;
+
+  const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+
+  function render() {
+    currentX += (targetX - currentX) * 0.12;
+    currentY += (targetY - currentY) * 0.12;
+
+    const width = shell.clientWidth || 1;
+    const height = shell.clientHeight || 1;
+    const px = clamp((currentX / width) * 100, 0, 100);
+    const py = clamp((currentY / height) * 100, 0, 100);
+    const cx = px - 50;
+    const cy = py - 50;
+
+    wrapper.style.setProperty('--pointer-x', `${px}%`);
+    wrapper.style.setProperty('--pointer-y', `${py}%`);
+    wrapper.style.setProperty('--background-x', `${35 + px * 0.3}%`);
+    wrapper.style.setProperty('--background-y', `${35 + py * 0.3}%`);
+    wrapper.style.setProperty('--pointer-from-center', `${clamp(Math.hypot(cx, cy) / 50, 0, 1)}`);
+    wrapper.style.setProperty('--pointer-from-top', `${py / 100}`);
+    wrapper.style.setProperty('--pointer-from-left', `${px / 100}`);
+    wrapper.style.setProperty('--rotate-x', `${(-cx / 8).toFixed(2)}deg`);
+    wrapper.style.setProperty('--rotate-y', `${(cy / 7).toFixed(2)}deg`);
+
+    if (active || Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1) {
+      rafId = requestAnimationFrame(render);
+    } else {
+      rafId = null;
+    }
+  }
+
+  function start() {
+    if (!rafId) rafId = requestAnimationFrame(render);
+  }
+
+  wrapper.addEventListener('pointerenter', (event) => {
+    active = true;
+    wrapper.classList.add('active');
+    const rect = shell.getBoundingClientRect();
+    targetX = event.clientX - rect.left;
+    targetY = event.clientY - rect.top;
+    start();
+  });
+
+  wrapper.addEventListener('pointermove', (event) => {
+    const rect = shell.getBoundingClientRect();
+    targetX = event.clientX - rect.left;
+    targetY = event.clientY - rect.top;
+    start();
+  });
+
+  wrapper.addEventListener('pointerleave', () => {
+    active = false;
+    targetX = shell.clientWidth / 2;
+    targetY = shell.clientHeight / 2;
+    start();
+    setTimeout(() => wrapper.classList.remove('active'), 450);
+  });
+
+  // Set the card to its neutral position on load.
+  targetX = shell.clientWidth / 2;
+  targetY = shell.clientHeight / 2;
+  currentX = targetX;
+  currentY = targetY;
+  start();
+}

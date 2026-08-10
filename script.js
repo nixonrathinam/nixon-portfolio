@@ -444,8 +444,8 @@ function initProfileCard() {
     wrapper.style.setProperty('--pointer-from-center', `${clamp(Math.hypot(cx, cy) / 50, 0, 1)}`);
     wrapper.style.setProperty('--pointer-from-top', `${py / 100}`);
     wrapper.style.setProperty('--pointer-from-left', `${px / 100}`);
-    wrapper.style.setProperty('--rotate-x', `${(-cx / 8).toFixed(2)}deg`);
-    wrapper.style.setProperty('--rotate-y', `${(cy / 7).toFixed(2)}deg`);
+    wrapper.style.setProperty('--rotate-x', `${(-cx / 3.6).toFixed(2)}deg`);
+    wrapper.style.setProperty('--rotate-y', `${(cy / 3.6).toFixed(2)}deg`);
 
     if (active || Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1) {
       rafId = requestAnimationFrame(render);
@@ -457,6 +457,8 @@ function initProfileCard() {
   function start() {
     if (!rafId) rafId = requestAnimationFrame(render);
   }
+
+  if (window.matchMedia('(pointer: coarse)').matches) return;
 
   wrapper.addEventListener('pointerenter', (event) => {
     active = true;
